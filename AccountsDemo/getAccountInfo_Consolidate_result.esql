@@ -1,0 +1,20 @@
+
+
+CREATE COMPUTE MODULE getAccountInfo_Consolidate_result
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE balanceResult REFERENCE TO InputRoot.ComIbmGroupCompleteNode.Group.Replies.BALANCE.Reply.Root.XMLNSC.account;
+		DECLARE ownerResult REFERENCE TO InputRoot.ComIbmGroupCompleteNode.Group.Replies.OWNER.Reply.Root.XMLNSC.accountOwner;
+		DECLARE cardResult REFERENCE TO InputRoot.ComIbmGroupCompleteNode.Group.Replies.CARD.Reply.Root.XMLNSC.card;
+		
+		SET OutputRoot.JSON.Data.accountNumber = balanceResult.accountNumber;
+		SET OutputRoot.JSON.Data.currentBalance = balanceResult.balance;
+		SET OutputRoot.JSON.Data.owner.customerID = ownerResult.customerID;
+		SET OutputRoot.JSON.Data.owner.firstName = ownerResult.firstName;
+		SET OutputRoot.JSON.Data.owner.lastName = ownerResult.latsName;
+		SET OutputRoot.JSON.Data.owner.email = ownerResult.email;
+		SET OutputRoot.JSON.Data.assignedCard.cardNumber = cardResult.cardNumber;
+		SET OutputRoot.JSON.Data.assignedCard.cardType = cardResult.cardType;
+		RETURN TRUE;
+	END;
+END MODULE;

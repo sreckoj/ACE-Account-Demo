@@ -1,0 +1,74 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "AccountsDemo",
+    "version" : "1.0.0",
+    "description" : "Accounts demo"
+  },
+  "paths" : {
+    "/account_info/{accountNumber}" : {
+      "get" : {
+        "operationId" : "getAccountInfo",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/AccountInfo"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve account info for an acount number",
+        "parameters" : [ {
+          "required" : true,
+          "name" : "accountNumber",
+          "in" : "path",
+          "type" : "string"
+        } ]
+      }
+    }
+  },
+  "basePath" : "/accounts",
+  "definitions" : {
+    "AccountInfo" : {
+      "type" : "object",
+      "properties" : {
+        "accountNumber" : {
+          "type" : "string"
+        },
+        "currentBalance" : {
+          "type" : "number"
+        },
+        "owner" : {
+          "type" : "object",
+          "properties" : {
+            "customerID" : {
+              "type" : "string"
+            },
+            "firstName" : {
+              "type" : "string"
+            },
+            "lastName" : {
+              "type" : "string"
+            },
+            "email" : {
+              "type" : "string"
+            }
+          }
+        },
+        "assignedCard" : {
+          "type" : "object",
+          "properties" : {
+            "cardNumber" : {
+              "type" : "string",
+              "format" : null
+            },
+            "cardType" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

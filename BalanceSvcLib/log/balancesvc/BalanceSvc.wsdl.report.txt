@@ -1,0 +1,13 @@
+
+
+Importing file: C:\workspaces\ace-demo\BalanceSvcLib\BalanceSvc.wsdl
+
+The WSDL import will proceed with bindings BalanceSvcHttpBinding.
+Creating wsdl schema document for platform:/resource/BalanceSvcLib/BalanceSvc.wsdl.
+Parsing wsdl binding {http://BalanceSvc}BalanceSvcHttpBinding.
+Parsing wsdl binding input getBalance.
+Parsing wsdl binding output getBalance.
+Processing doc style for operation getBalance.
+Populating WSDL schema BalanceSvc.xsd.
+Creating file BalanceSvc.xsd in the workspace.
+Copying source WSDL BalanceSvc.wsdl to BalanceSvc.wsdl.

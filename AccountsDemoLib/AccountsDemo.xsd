@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="accountNumber" type="xsd:string"></xsd:element>
+
+
+    <xsd:complexType name="AccountOwnerType">
+    	<xsd:sequence>
+    		<xsd:element name="customerID" type="xsd:string"></xsd:element>
+    		<xsd:element name="firstName" type="xsd:string"></xsd:element>
+    		<xsd:element name="lastName" type="xsd:string"></xsd:element>
+    		<xsd:element name="email" type="xsd:string"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="accountOwner" type="AccountOwnerType"></xsd:element>
+
+    <xsd:complexType name="BancCardType">
+    	<xsd:sequence>
+    		<xsd:element name="cardNumber" type="xsd:string"></xsd:element>
+    		<xsd:element name="cardType" type="xsd:string"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="card" type="BancCardType"></xsd:element>
+
+    <xsd:complexType name="AccountType">
+    	<xsd:sequence>
+    		<xsd:element name="accountNumber" type="xsd:string"></xsd:element>
+    		<xsd:element name="balance" type="xsd:decimal"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="account" type="AccountType"></xsd:element>
+</xsd:schema>

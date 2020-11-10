@@ -1,0 +1,10 @@
+
+
+CREATE COMPUTE MODULE AccountInfoProcessing_Compute_BALANCE
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		SET OutputRoot.JSON.Data.owner.firstName = 'BALANCE';
+		RETURN TRUE;
+	END;
+END MODULE;

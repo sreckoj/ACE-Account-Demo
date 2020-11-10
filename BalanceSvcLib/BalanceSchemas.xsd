@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:complexType name="AccountBalanceType">
+    	<xsd:sequence>
+    		<xsd:element name="accountNum" type="xsd:string"></xsd:element>
+    		<xsd:element name="balance" type="xsd:decimal"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="AccountBalance" type="AccountBalanceType"></xsd:element>
+</xsd:schema>

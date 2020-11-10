@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <inlinedXMLSchema><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"> 
+    <xsd:element name="id" type="xsd:string"/> 
+</xsd:schema>]]></inlinedXMLSchema>
+    <input path="mbsharedlib://AccountsDemoLib/AccountsDemo.xsd" var="var2"/>
+    <input inlinedXMLSchema="true" path="../schema_0.xsd" var="var1"/>
+    <output path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/JsonDomainMsg.xsd" var="var"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="out" uri="http://www.ibm.com/iib/msl/json"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="getAccountInfoProcessing_Prepare_REST_call">
+        <input path="$var2/mb:msg(accountNumber,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_accountNumber"/>
+        <output namespace="http://www.ibm.com/iib/msl/json" path="$var/mb:msg(JSON,assembly,JSON,LocalEnvironment,Properties)" var="ComIbmMessageAssembly_JSON">
+            <cast castType="userDefined" path="$ComIbmMessageAssembly_JSON/JSON/Data/type('anyType')" qualifier="{http://www.ibm.com/iib/msl/json}JSONObject" ref="var"/>
+            <cast castType="userDefined" path="$ComIbmMessageAssembly_JSON/LocalEnvironment/Destination/REST/Request/Parameters/any" qualifier="id" ref="var1"/>
+        </output>
+        <move>
+            <input path="$ComIbmMessageAssembly_accountNumber/Properties"/>
+            <output path="$ComIbmMessageAssembly_JSON/Properties"/>
+        </move>
+        <assign value="0035p00003VxxpAAAR">
+            <output path="$ComIbmMessageAssembly_JSON/LocalEnvironment/Destination/REST/Request/Parameters/id"/>
+        </assign>
+    </mappingDeclaration>
+</mappingRoot>

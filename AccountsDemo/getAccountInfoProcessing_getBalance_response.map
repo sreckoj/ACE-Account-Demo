@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
+    <input path="mbsharedlib://BalanceSvcLib/BalanceSvc_InlineSchema1.xsd"/>
+    <output path="mbsharedlib://AccountsDemoLib/AccountsDemo.xsd"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="in" uri="http://BalanceSvc"/>
+    </namespaces>
+    <generation engine="xquery"/>
+    <mappingDeclaration name="getAccountInfoProcessing_getBalance_response">
+        <input namespace="http://BalanceSvc" path="mb:msg(getBalanceResponse,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_getBalanceResponse"/>
+        <output path="mb:msg(account,assembly,XMLNSC,Properties)" var="ComIbmMessageAssembly_account"/>
+        <move>
+            <input path="$ComIbmMessageAssembly_getBalanceResponse/Properties"/>
+            <output path="$ComIbmMessageAssembly_account/Properties"/>
+            <override>
+                <assign value="{AccountsDemoLib}">
+                    <output path="$ComIbmMessageAssembly_account/Properties/MessageSet"/>
+                </assign>
+            </override>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_getBalanceResponse/getBalanceResponse/AccountBalance/accountNum"/>
+            <output path="$ComIbmMessageAssembly_account/account/accountNumber"/>
+        </move>
+        <move>
+            <input path="$ComIbmMessageAssembly_getBalanceResponse/getBalanceResponse/AccountBalance/balance"/>
+            <output path="$ComIbmMessageAssembly_account/account/balance"/>
+        </move>
+    </mappingDeclaration>
+</mappingRoot>

@@ -1,0 +1,10 @@
+
+
+CREATE COMPUTE MODULE AccountInfoProcessing_Compute_CARD
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		SET OutputRoot.JSON.Data.owner.firstName = 'CARD';
+		RETURN TRUE;
+	END;
+END MODULE;

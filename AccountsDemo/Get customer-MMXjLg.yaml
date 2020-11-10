@@ -1,0 +1,74 @@
+swagger: '2.0'
+info:
+  title: Get customer-MMXjLg
+  version: 0.0.1
+basePath: /MMXjLg
+paths:
+  '/Customer/{id}':
+    get:
+      tags:
+        - Customer
+      summary: 'Find a model instance by {{id}} from the data source.'
+      operationId: Customer.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Customer'
+      deprecated: false
+definitions:
+  x-any:
+    properties: {}
+  Customer:
+    description: ''
+    properties:
+      CustomerID:
+        type: string
+      FirstName:
+        type: string
+      LastName:
+        type: string
+      EMail:
+        type: string
+    required:
+      - CustomerID
+    additionalProperties: false
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+x-ibm-configuration:
+  assembly:
+    execute:
+      - set-variable:
+          actions:
+            - set: message.headers.Authorization
+              value: >-
+                Basic
+                YXBwY29udXNlcjAxOmIyYzEzZDA3LWY2OWMtNDgwOS04YzQ5LWU0NTg1YjJlM2Y2Mg==
+      - invoke:
+          target-url: >-
+            https://apis-7.appconnect.ibmcloud.com$(request.path)$(request.search)
+          verb: keep
+  cors:
+    enabled: true
+securityDefinitions:
+  client_id:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+    x-key-type: clientId
+security:
+  - client_id: []
+tags:
+  - name: Customer
+    description: ''

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="BalanceSvc" targetNamespace="http://BalanceSvc" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://BalanceSvc" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="BalanceSvcHttpBinding" originalBindingStyle="document"/>
+        <generatedXSD location="BalanceSvc_InlineSchema1.xsd"/>
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  
+  
+  <wsdl:types>
+    
+        <xsd:schema targetNamespace="http://BalanceSvc" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions">
+            <xsd:import schemaLocation="BalanceSchemas.xsd"/>
+            <xsd:include schemaLocation="BalanceSvc_InlineSchema1.xsd"/>
+    </xsd:schema>
+    </wsdl:types>
+  <wsdl:message name="getBalanceRequestMsg">
+    <wsdl:part element="tns:getBalance" name="getBalanceParameters"/>
+  </wsdl:message>
+  <wsdl:message name="getBalanceResponseMsg">
+    <wsdl:part element="tns:getBalanceResponse" name="getBalanceResult"/>
+  </wsdl:message>
+  <wsdl:portType name="BalanceSvc">
+    <wsdl:operation name="getBalance">
+      <wsdl:input message="tns:getBalanceRequestMsg" name="getBalanceRequest"/>
+      <wsdl:output message="tns:getBalanceResponseMsg" name="getBalanceResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BalanceSvcHttpBinding" type="tns:BalanceSvc">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getBalance">
+      <soap:operation soapAction="http://BalanceSvc/getBalance"/>
+      <wsdl:input name="getBalanceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBalanceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    </wsdl:binding>
+  <wsdl:service name="BalanceSvcHttpService">
+    <wsdl:port binding="tns:BalanceSvcHttpBinding" name="BalanceSvcHttpPort">
+      <soap:address location="http://localhost:7800/BalanceSvc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
