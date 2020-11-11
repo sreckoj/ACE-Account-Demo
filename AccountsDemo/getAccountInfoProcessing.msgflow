@@ -56,7 +56,7 @@
       <nodes xmi:type="ComIbmMQGet.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_18" location="377,256" queueName="CARD.DATA.RESP" connection="CLIENT" messageDomainProperty="XMLNSC" policyUrl="{DefaultPolicies}:MQPolicy">
         <translation xmi:type="utility:ConstantString" string="MQ Get"/>
       </nodes>
-      <nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_19" location="125,288" httpInputHeader="DeleteHeader" httpResponseHeader="DeleteHeader" httpRequestHeader="DeleteHeader" httpReplyHeader="DeleteHeader">
+      <nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_19" location="123,283" httpInputHeader="DeleteHeader" httpResponseHeader="DeleteHeader" httpRequestHeader="DeleteHeader" httpReplyHeader="DeleteHeader">
         <translation xmi:type="utility:ConstantString" string="Delete HTTP headers"/>
       </nodes>
       <nodes xmi:type="ComIbmMQHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_21" location="469,272" mqmdAAAOptions="Delete header" mqmdCodedCharSetId="MQCCSI_Q_MGR" mqmdFormat="MQFMT_NONE" mqmdVersion="MQMD_VERSION_1" mqmdMsgType="MQMT_DATAGRAM" mqmdExpiry="MQEI_UNLIMITED" mqmdFeedback="MQFB_NONE" mqmdPriority="MQPRI_PRIORITY_AS_Q_DEF" mqmdPersistence="MQPER_PERSISTENCE_AS_Q_DEF" mqmdMsgId="MQMI_NONE" mqmdCorrelId="MQCI_NONE" mqdlhAAAOptions="Delete header" mqdlhCodedCharSetId="MQCCSI_Q_MGR"
