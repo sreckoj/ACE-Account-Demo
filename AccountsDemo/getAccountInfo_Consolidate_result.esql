@@ -11,7 +11,7 @@ CREATE COMPUTE MODULE getAccountInfo_Consolidate_result
 		SET OutputRoot.JSON.Data.currentBalance = balanceResult.balance;
 		SET OutputRoot.JSON.Data.owner.customerID = ownerResult.customerID;
 		SET OutputRoot.JSON.Data.owner.firstName = ownerResult.firstName;
-		SET OutputRoot.JSON.Data.owner.lastName = ownerResult.latsName;
+		SET OutputRoot.JSON.Data.owner.lastName = ownerResult.lastName;
 		SET OutputRoot.JSON.Data.owner.email = ownerResult.email;
 		SET OutputRoot.JSON.Data.assignedCard.cardNumber = cardResult.cardNumber;
 		SET OutputRoot.JSON.Data.assignedCard.cardType = cardResult.cardType;

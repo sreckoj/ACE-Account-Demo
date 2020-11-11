@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
-    <inlinedXMLSchema><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"> 
-    <xsd:element name="id" type="xsd:string"/> 
+    <inlinedXMLSchema><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
+    <xsd:element name="id" type="xsd:string"/>  
 </xsd:schema>]]></inlinedXMLSchema>
     <input path="mbsharedlib://AccountsDemoLib/AccountsDemo.xsd" var="var2"/>
     <input inlinedXMLSchema="true" path="../schema_0.xsd" var="var1"/>
@@ -19,7 +19,7 @@
             <input path="$ComIbmMessageAssembly_accountNumber/Properties"/>
             <output path="$ComIbmMessageAssembly_JSON/Properties"/>
         </move>
-        <assign value="0035p00003VxxpAAAR">
+        <assign value="0035p00003Vxx5lAAB">
             <output path="$ComIbmMessageAssembly_JSON/LocalEnvironment/Destination/REST/Request/Parameters/id"/>
         </assign>
     </mappingDeclaration>

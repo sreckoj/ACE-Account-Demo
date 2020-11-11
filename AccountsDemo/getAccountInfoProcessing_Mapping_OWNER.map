@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
-    <inlinedXMLSchema><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"> 
-    <xsd:element name="LastName" nillable="true" type="xsd:string"/> 
-    <xsd:element name="FirstName" nillable="true" type="xsd:string"/> 
-    <xsd:element name="EMail" nillable="true" type="xsd:string"/> 
-    <xsd:element name="CustomerID" nillable="true" type="xsd:string"/> 
+    <inlinedXMLSchema><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
+    <xsd:element name="LastName" nillable="true" type="xsd:string"/>  
+    <xsd:element name="FirstName" nillable="true" type="xsd:string"/>  
+    <xsd:element name="EMail" nillable="true" type="xsd:string"/>  
+    <xsd:element name="CustomerID" nillable="true" type="xsd:string"/>  
 </xsd:schema>]]></inlinedXMLSchema>
     <input path="jar:file://!com/ibm/etools/mft/map/xsds/predefined/JsonDomainMsg.xsd" var="var"/>
     <input inlinedXMLSchema="true" path="../schema_0.xsd" var="var1"/>
     <output path="mbsharedlib://AccountsDemoLib/AccountsDemo.xsd"/>
+    <namespaces>
+        <namespace kind="supplement" prefix="in" uri="http://www.ibm.com/iib/msl/json"/>
+    </namespaces>
     <generation engine="xquery"/>
     <mappingDeclaration name="getAccountInfoProcessing_Mapping_OWNER">
         <input namespace="http://www.ibm.com/iib/msl/json" path="$var/mb:msg(JSON,assembly,JSON,Properties)" var="MessageAssembly">
@@ -33,15 +36,15 @@
         </move>
         <move>
             <input path="$MessageAssembly/JSON/spath('Data',2)/EMail[1]"/>
-            <output path="$ComIbmMessageAssembly_accountOwner/accountOwner/firstName"/>
+            <output path="$ComIbmMessageAssembly_accountOwner/accountOwner/email"/>
         </move>
         <move>
             <input path="$MessageAssembly/JSON/spath('Data',2)/FirstName[1]"/>
-            <output path="$ComIbmMessageAssembly_accountOwner/accountOwner/lastName"/>
+            <output path="$ComIbmMessageAssembly_accountOwner/accountOwner/firstName"/>
         </move>
         <move>
             <input path="$MessageAssembly/JSON/spath('Data',2)/LastName[1]"/>
-            <output path="$ComIbmMessageAssembly_accountOwner/accountOwner/email"/>
+            <output path="$ComIbmMessageAssembly_accountOwner/accountOwner/lastName"/>
         </move>
     </mappingDeclaration>
 </mappingRoot>
