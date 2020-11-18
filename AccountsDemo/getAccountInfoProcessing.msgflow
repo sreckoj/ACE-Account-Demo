@@ -53,7 +53,7 @@
       <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_17" location="257,266" queueName="CARD.DATA.REQ" connection="CLIENT" transactionMode="no" request="true" replyToQ="CARD.DATA.RESP" policyUrl="{DefaultPolicies}:MQPolicy">
         <translation xmi:type="utility:ConstantString" string="MQ Output"/>
       </nodes>
-      <nodes xmi:type="ComIbmMQGet.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_18" location="377,256" queueName="CARD.DATA.RESP" connection="CLIENT" messageDomainProperty="XMLNSC" policyUrl="{DefaultPolicies}:MQPolicy">
+      <nodes xmi:type="ComIbmMQGet.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_18" location="376,266" queueName="CARD.DATA.RESP" connection="CLIENT" messageDomainProperty="XMLNSC" policyUrl="{DefaultPolicies}:MQPolicy">
         <translation xmi:type="utility:ConstantString" string="MQ Get"/>
       </nodes>
       <nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_19" location="123,261" httpInputHeader="DeleteHeader" httpResponseHeader="DeleteHeader" httpRequestHeader="DeleteHeader" httpReplyHeader="DeleteHeader">
