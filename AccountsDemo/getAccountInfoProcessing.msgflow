@@ -50,10 +50,10 @@
         <translation xmi:type="utility:ConstantString" string="HTTP Header"/>
         <nameValue4RequestHeader name="X-IBM-Client-Id" value="6e2116ba-8b4d-4b8a-9340-33155bfe53d8"/>
       </nodes>
-      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_17" location="257,266" queueName="CARD.DATA.REQ" connection="CLIENT" transactionMode="no" request="true" replyToQ="CARD.DATA.RESP" policyUrl="{DefaultPolicies}:MQPolicy">
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_17" location="257,266" queueName="CARD.DATA.REQ" connection="CLIENT" destinationQueueManagerName="QUICKSTART" queueManagerHostname="172.21.210.203" listenerPortNumber="1414" channelName="SYSTEM.DEF.SVRCONN" transactionMode="no" request="true" replyToQ="CARD.DATA.RESP">
         <translation xmi:type="utility:ConstantString" string="MQ Output"/>
       </nodes>
-      <nodes xmi:type="ComIbmMQGet.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_18" location="376,264" queueName="CARD.DATA.RESP" connection="CLIENT" messageDomainProperty="XMLNSC" policyUrl="{DefaultPolicies}:MQPolicy">
+      <nodes xmi:type="ComIbmMQGet.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_18" location="376,264" queueName="CARD.DATA.RESP" connection="CLIENT" destinationQueueManagerName="QUICKSTART" queueManagerHostname="172.21.210.203" listenerPortNumber="1414" channelName="SYSTEM.DEF.SVRCONN" messageDomainProperty="XMLNSC">
         <translation xmi:type="utility:ConstantString" string="MQ Get"/>
       </nodes>
       <nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_19" location="123,261" httpInputHeader="DeleteHeader" httpResponseHeader="DeleteHeader" httpRequestHeader="DeleteHeader" httpReplyHeader="DeleteHeader">

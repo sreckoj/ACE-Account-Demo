@@ -6,10 +6,10 @@
     <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/CardManagement/icons/full/obj16/GetCardDetails.gif"/>
     <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/CardManagement/icons/full/obj30/GetCardDetails.gif"/>
     <composition>
-      <nodes xmi:type="ComIbmMQInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="67,125" queueName="CARD.DATA.REQ" connection="CLIENT" messageDomainProperty="XMLNSC" transactionMode="no" policyUrl="{DefaultPolicies}:MQPolicy">
+      <nodes xmi:type="ComIbmMQInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="67,125" queueName="CARD.DATA.REQ" connection="CLIENT" destinationQueueManagerName="QUICKSTART" queueManagerHostname="172.21.210.203" listenerPortNumber="1414" channelName="SYSTEM.DEF.SVRCONN" messageDomainProperty="XMLNSC" transactionMode="no">
         <translation xmi:type="utility:ConstantString" string="MQ Input"/>
       </nodes>
-      <nodes xmi:type="ComIbmMQReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="404,127" connection="CLIENT" transactionMode="no" policyUrl="{DefaultPolicies}:MQPolicy">
+      <nodes xmi:type="ComIbmMQReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="404,127" connection="CLIENT" destinationQueueManagerName="QUICKSTART" queueManagerHostname="172.21.210.203" listenerPortNumber="1414" channelName="SYSTEM.DEF.SVRCONN" transactionMode="no">
         <translation xmi:type="utility:ConstantString" string="MQ Reply"/>
       </nodes>
       <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_5" location="202,116" mappingExpression="msl://{default}#GetCardDetails_Mapping">
