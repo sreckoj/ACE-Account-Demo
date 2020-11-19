@@ -4,8 +4,8 @@ COPY AccountsDemo /home/aceuser/AccountsDemo
 COPY AccountsDemoLib /home/aceuser/AccountsDemoLib
 COPY BalanceSvc /home/aceuser/BalanceSvc
 COPY BalanceSvcLib /home/aceuser/BalanceSvcLib
-COPY CardManagement /home/aceuser/CardManagement
 COPY DefaultPolicies /home/aceuser/DefaultPolicies
+COPY CardManagement /home/aceuser/CardManagement
 RUN mkdir /home/aceuser/bars
 RUN source /opt/ibm/ace-11/server/bin/mqsiprofile
 RUN /opt/ibm/ace-11/server/bin/mqsipackagebar -a bars/AccountsDemo.bar -k AccountsDemo BalanceSvc CardManagement -y AccountsDemoLib BalanceSvcLib -x DefaultPolicies
